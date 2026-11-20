@@ -35,7 +35,6 @@
       font-family: 'Mali', cursive;
     }
 
-    /* สไตล์การ์ดขอบมนเส้นหนามีเงาแข็ง */
     .kawaii-card {
       background-color: var(--card-cream);
       border: 2.5px solid var(--border-brown);
@@ -81,7 +80,6 @@
       box-shadow: 0 0 0 3px var(--pastel-yellow);
     }
 
-    /* Custom Scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
       height: 8px;
@@ -108,15 +106,14 @@
 
   <!-- Toast แจ้งเตือนแบบน่ารัก -->
   <div id="toast" class="fixed bottom-5 right-5 z-50 hidden transform transition-all duration-300">
-    <div class="kawaii-card bg-[#BCE3C6] px-5 py-3 flex items-center gap-3 font-cute font-bold text-sm">
-      <span id="toast-icon">🐻</span>
+    <div class="kawaii-card bg-[#BCE3C6] px-5 py-3 flex items-center gap-2.5 font-cute font-bold text-sm">
+      <span id="toast-icon" class="shrink-0"></span>
       <span id="toast-msg">บันทึกเรียบร้อยแล้ว!</span>
     </div>
   </div>
 
   <!-- แถบตกแต่งท้องฟ้า & เมฆด้านบน -->
   <header class="relative bg-gradient-to-b from-[#DDF0FF] to-[#FDFBF7] border-b-[2.5px] border-[#4A3B32] pt-4 pb-6 px-4 mb-8 overflow-hidden">
-    <!-- เมฆตกแต่ง SVG -->
     <svg class="absolute top-2 left-6 w-20 h-10 opacity-80 pointer-events-none animate-float" viewBox="0 0 100 50">
       <path d="M25,40 Q10,40 10,28 Q10,18 22,16 Q28,5 45,8 Q60,3 70,15 Q88,15 88,28 Q88,40 72,40 Z" fill="#FFFFFF" stroke="#4A3B32" stroke-width="2.5" stroke-linejoin="round"/>
     </svg>
@@ -128,17 +125,12 @@
       <!-- โลโก้และมาสคอตกระเป๋าตังค์น้องหมี -->
       <div class="flex items-center gap-3">
         <div class="w-14 h-14 rounded-2xl bg-[#FCE8A6] border-[2.5px] border-[#4A3B32] shadow-[3px_3px_0px_#4A3B32] flex items-center justify-center shrink-0">
-          <!-- Custom SVG มาสคอตกระเป๋าตังค์ -->
           <svg class="w-11 h-11" viewBox="0 0 64 64">
-            <!-- หูหมี -->
             <circle cx="18" cy="18" r="7" fill="#D4A373" stroke="#4A3B32" stroke-width="2.5"/>
             <circle cx="46" cy="18" r="7" fill="#D4A373" stroke="#4A3B32" stroke-width="2.5"/>
-            <!-- ตัวกระเป๋า -->
             <rect x="10" y="18" width="44" height="34" rx="14" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2.5"/>
-            <!-- ตัวล็อกกระเป๋าด้านบน -->
             <circle cx="27" cy="14" r="3.5" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2"/>
             <circle cx="37" cy="14" r="3.5" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2"/>
-            <!-- หน้าตาน่ารัก -->
             <circle cx="23" cy="34" r="2.5" fill="#4A3B32"/>
             <circle cx="41" cy="34" r="2.5" fill="#4A3B32"/>
             <ellipse cx="18" cy="38" rx="3.5" ry="2" fill="#FF8FA3" opacity="0.7"/>
@@ -150,7 +142,17 @@
           <h1 class="font-cute text-2xl sm:text-3xl font-bold tracking-tight text-[#4A3B32]">
             เป๋าตุง <span class="text-lg sm:text-xl font-semibold text-[#8C6D53]">(PaoTung)</span>
           </h1>
-          <p class="text-xs sm:text-sm text-[#7A6555]">ไดอารี่บันทึกค่าใช้จ่าย & ดูแลดอกไม้การเงิน 🌸</p>
+          <p class="text-xs sm:text-sm text-[#7A6555] flex items-center gap-1.5">
+            <span>ไดอารี่บันทึกค่าใช้จ่าย & ดูแลดอกไม้การเงิน</span>
+            <svg class="w-4 h-4 inline shrink-0" viewBox="0 0 32 32">
+              <circle cx="16" cy="8" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
+              <circle cx="23" cy="13" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
+              <circle cx="20" cy="22" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
+              <circle cx="12" cy="22" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
+              <circle cx="9" cy="13" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
+              <circle cx="16" cy="16" r="4" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2"/>
+            </svg>
+          </p>
         </div>
       </div>
 
@@ -162,7 +164,6 @@
           <button onclick="setQuickFilter('7days')" id="filter-7days" class="filter-pill px-3 py-1 rounded-full text-xs sm:text-sm font-cute font-bold transition-colors bg-[#F9C6C9] border border-[#4A3B32]">7 วันล่าสุด</button>
           <button onclick="setQuickFilter('month')" id="filter-month" class="filter-pill px-3 py-1 rounded-full text-xs sm:text-sm font-cute font-bold transition-colors">เดือนนี้</button>
         </div>
-        <!-- เลือกช่วงวันที่กำหนดเอง -->
         <div class="flex items-center gap-1.5 text-xs bg-[#FFFDF9] px-3 py-1.5 rounded-full border-2 border-[#4A3B32]">
           <span class="font-cute font-semibold text-[#7A6555]">ช่วงวันที่:</span>
           <input type="date" id="start-date" onchange="applyCustomDateFilter()" class="bg-transparent font-medium text-[#4A3B32] outline-none cursor-pointer" />
@@ -176,13 +177,10 @@
   <!-- Main Container -->
   <main class="max-w-4xl mx-auto px-4 space-y-8">
 
-    <!-- 1. การ์ดบันทึกค่าใช้จ่ายด่วน (มีน้องสัตว์เกาะขอบบน) -->
+    <!-- 1. การ์ดบันทึกค่าใช้จ่ายด่วน -->
     <section class="relative pt-8">
-      <!-- ตัวการ์ตูนน้องหมี แรคคูน แมว เกาะขอบด้านบน -->
       <div class="absolute top-0 left-0 right-0 flex justify-between items-end px-6 sm:px-10 pointer-events-none z-10">
-        <!-- น้องหมี & แรคคูน ฝั่งซ้าย -->
         <div class="flex items-end gap-1">
-          <!-- น้องหมี -->
           <svg class="w-14 h-12" viewBox="0 0 70 60">
             <circle cx="18" cy="20" r="8" fill="#C69C6D" stroke="#4A3B32" stroke-width="2.5"/>
             <circle cx="52" cy="20" r="8" fill="#C69C6D" stroke="#4A3B32" stroke-width="2.5"/>
@@ -191,11 +189,9 @@
             <circle cx="25" cy="34" r="2.5" fill="#4A3B32"/>
             <circle cx="45" cy="34" r="2.5" fill="#4A3B32"/>
             <ellipse cx="35" cy="39" rx="3" ry="2" fill="#4A3B32"/>
-            <!-- อุ้งมือเกาะขอบ -->
             <ellipse cx="20" cy="54" rx="6" ry="4" fill="#D4A373" stroke="#4A3B32" stroke-width="2.5"/>
             <ellipse cx="50" cy="54" rx="6" ry="4" fill="#D4A373" stroke="#4A3B32" stroke-width="2.5"/>
           </svg>
-          <!-- น้องแรคคูน -->
           <svg class="w-13 h-11 hidden sm:block" viewBox="0 0 70 60">
             <polygon points="14,26 18,10 28,20" fill="#9E9E9E" stroke="#4A3B32" stroke-width="2.5" stroke-linejoin="round"/>
             <polygon points="56,26 52,10 42,20" fill="#9E9E9E" stroke="#4A3B32" stroke-width="2.5" stroke-linejoin="round"/>
@@ -208,12 +204,17 @@
           </svg>
         </div>
 
-        <!-- ป้ายหัวข้อตรงกลาง -->
         <div class="bg-[#F7EFE5] border-[2.5px] border-[#4A3B32] rounded-2xl px-5 py-1.5 shadow-[2px_2px_0px_#4A3B32] mb-1">
-          <h2 class="font-cute font-bold text-base sm:text-lg text-[#4A3B32]">✏️ บันทึกค่าใช้จ่ายด่วน</h2>
+          <h2 class="font-cute font-bold text-base sm:text-lg text-[#4A3B32] flex items-center gap-2">
+            <svg class="w-5 h-5 shrink-0" viewBox="0 0 32 32">
+              <path d="M6,26 L12,25 L26,11 L21,6 L7,20 Z" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2.2" stroke-linejoin="round"/>
+              <path d="M19,8 L24,13" stroke="#4A3B32" stroke-width="2"/>
+              <path d="M6,26 L9,25.5 L6.5,23 Z" fill="#4A3B32"/>
+            </svg>
+            <span>บันทึกค่าใช้จ่ายด่วน</span>
+          </h2>
         </div>
 
-        <!-- น้องแมวส้มฝั่งขวา -->
         <svg class="w-14 h-12" viewBox="0 0 70 60">
           <polygon points="14,28 16,10 30,22" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2.5" stroke-linejoin="round"/>
           <polygon points="56,28 54,10 40,22" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2.5" stroke-linejoin="round"/>
@@ -227,16 +228,13 @@
         </svg>
       </div>
 
-      <!-- ตัวกล่องฟอร์ม -->
       <form id="expense-form" onsubmit="handleAddExpense(event)" class="kawaii-card bg-[#F7EFE5] p-5 sm:p-6 pt-7 space-y-4">
         <div class="grid grid-cols-1 sm:grid-cols-12 gap-3">
-          <!-- ชื่อรายการ -->
           <div class="sm:col-span-5">
             <label class="block font-cute text-xs font-bold mb-1 ml-1 text-[#6D5645]">ซื้ออะไรไปนะ?</label>
             <input type="text" id="input-title" required placeholder="เช่น ข้าวมันไก่, ชานมไข่มุก..." class="kawaii-input w-full px-4 py-2.5 text-sm font-medium" />
           </div>
 
-          <!-- จำนวนเงิน -->
           <div class="sm:col-span-4">
             <label class="block font-cute text-xs font-bold mb-1 ml-1 text-[#6D5645]">ราคาเท่าไหร่ (บาท)</label>
             <div class="relative">
@@ -245,14 +243,12 @@
             </div>
           </div>
 
-          <!-- วันที่ -->
           <div class="sm:col-span-3">
             <label class="block font-cute text-xs font-bold mb-1 ml-1 text-[#6D5645]">วันที่จ่าย</label>
             <input type="date" id="input-date" required class="kawaii-input w-full px-3 py-2.5 text-sm font-medium cursor-pointer" />
           </div>
         </div>
 
-        <!-- เลือกหมวดหมู่ & ปุ่มบันทึก -->
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pt-1">
           <div class="flex flex-wrap items-center gap-2">
             <span class="font-cute text-xs font-bold text-[#6D5645] mr-1">หมวดหมู่:</span>
@@ -260,48 +256,68 @@
             <label class="cursor-pointer">
               <input type="radio" name="category" value="อาหาร" checked class="peer sr-only" />
               <div class="px-3.5 py-1.5 rounded-full border-2 border-[#4A3B32] bg-white peer-checked:bg-[#F9C6C9] peer-checked:shadow-[2px_2px_0px_#4A3B32] font-cute text-xs sm:text-sm font-bold flex items-center gap-1.5 transition-all">
-                <span>🍙</span> อาหาร
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 32 32">
+                  <path d="M16,5 C9,5 4,18 5,24 C6,27 26,27 27,24 C28,18 23,5 16,5 Z" fill="#FFFDF9" stroke="#4A3B32" stroke-width="2.2" stroke-linejoin="round"/>
+                  <rect x="11" y="18" width="10" height="8" rx="1.5" fill="#4A3B32"/>
+                </svg>
+                <span>อาหาร</span>
               </div>
             </label>
 
             <label class="cursor-pointer">
               <input type="radio" name="category" value="เดินทาง" class="peer sr-only" />
               <div class="px-3.5 py-1.5 rounded-full border-2 border-[#4A3B32] bg-white peer-checked:bg-[#C5E0F5] peer-checked:shadow-[2px_2px_0px_#4A3B32] font-cute text-xs sm:text-sm font-bold flex items-center gap-1.5 transition-all">
-                <span>🚌</span> เดินทาง
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 32 32">
+                  <rect x="4" y="8" width="24" height="15" rx="4" fill="#C5E0F5" stroke="#4A3B32" stroke-width="2.2"/>
+                  <rect x="7" y="11" width="7" height="5" rx="1" fill="#FFFDF9" stroke="#4A3B32" stroke-width="1.6"/>
+                  <rect x="17" y="11" width="8" height="5" rx="1" fill="#FFFDF9" stroke="#4A3B32" stroke-width="1.6"/>
+                  <circle cx="10" cy="24" r="3" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2"/>
+                  <circle cx="22" cy="24" r="3" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2"/>
+                </svg>
+                <span>เดินทาง</span>
               </div>
             </label>
 
             <label class="cursor-pointer">
               <input type="radio" name="category" value="ช้อปปิ้ง" class="peer sr-only" />
               <div class="px-3.5 py-1.5 rounded-full border-2 border-[#4A3B32] bg-white peer-checked:bg-[#FCE8A6] peer-checked:shadow-[2px_2px_0px_#4A3B32] font-cute text-xs sm:text-sm font-bold flex items-center gap-1.5 transition-all">
-                <span>🛍️</span> ช้อปปิ้ง
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 32 32">
+                  <path d="M11,11 V9 A5,5 0 0,1 21,9 V11" fill="none" stroke="#4A3B32" stroke-width="2.2" stroke-linecap="round"/>
+                  <rect x="6" y="11" width="20" height="16" rx="3" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2.2"/>
+                  <circle cx="16" cy="19" r="2.2" fill="#F9C6C9" stroke="#4A3B32" stroke-width="1.5"/>
+                </svg>
+                <span>ช้อปปิ้ง</span>
               </div>
             </label>
 
             <label class="cursor-pointer">
               <input type="radio" name="category" value="บิล/อื่นๆ" class="peer sr-only" />
               <div class="px-3.5 py-1.5 rounded-full border-2 border-[#4A3B32] bg-white peer-checked:bg-[#E2D1F9] peer-checked:shadow-[2px_2px_0px_#4A3B32] font-cute text-xs sm:text-sm font-bold flex items-center gap-1.5 transition-all">
-                <span>🧾</span> บิล/อื่นๆ
+                <svg class="w-4 h-4 shrink-0" viewBox="0 0 32 32">
+                  <path d="M8,5 H24 V27 L21,25 L18,27 L16,25 L14,27 L11,25 L8,27 Z" fill="#FFFDF9" stroke="#4A3B32" stroke-width="2.2" stroke-linejoin="round"/>
+                  <path d="M12,11 H20 M12,16 H18" stroke="#4A3B32" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>บิล/อื่นๆ</span>
               </div>
             </label>
           </div>
 
           <button type="submit" class="kawaii-btn bg-[#BCE3C6] hover:bg-[#A8D8B5] px-6 py-2.5 font-cute font-bold text-sm sm:text-base text-[#4A3B32] flex items-center justify-center gap-2 shrink-0">
             <span>บันทึกเล๊ย!</span>
-            <span>✨</span>
+            <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24">
+              <path d="M12,2 L14.2,9.8 L22,12 L14.2,14.2 L12,22 L9.8,14.2 L2,12 L9.8,9.8 Z" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
           </button>
         </div>
       </form>
     </section>
 
-    <!-- 2. การ์ดสรุปการใช้จ่ายของเรา (Dashboard Summary & Chart) -->
+    <!-- 2. การ์ดสรุปการใช้จ่ายของเรา (คลีนๆ เหมือนเดิม) -->
     <section class="kawaii-card p-5 sm:p-6 relative overflow-hidden">
-      <!-- วงกลมตกแต่งมุมขวาบนสไตล์ Bullet Journal -->
       <div class="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-[#F9C6C9]/40 pointer-events-none"></div>
 
       <div class="flex items-center justify-between mb-4">
         <div class="flex items-center gap-2.5">
-          <!-- Custom SVG บ้านน่ารัก -->
           <svg class="w-9 h-9 shrink-0" viewBox="0 0 48 48">
             <polygon points="24,6 6,22 42,22" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2.5" stroke-linejoin="round"/>
             <rect x="11" y="22" width="26" height="20" rx="3" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2.5"/>
@@ -310,16 +326,25 @@
             <circle cx="32" cy="27" r="1.5" fill="#4A3B32"/>
           </svg>
           <div>
-            <h2 class="font-cute font-bold text-lg sm:text-xl text-[#4A3B32]">สรุปการใช้จ่ายของเรา 🌸</h2>
+            <h2 class="font-cute font-bold text-lg sm:text-xl text-[#4A3B32] flex items-center gap-1.5">
+              <span>สรุปการใช้จ่ายของเรา</span>
+              <svg class="w-5 h-5 inline shrink-0" viewBox="0 0 32 32">
+                <circle cx="16" cy="8" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
+                <circle cx="23" cy="13" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
+                <circle cx="20" cy="22" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
+                <circle cx="12" cy="22" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
+                <circle cx="9" cy="13" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
+                <circle cx="16" cy="16" r="4" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2"/>
+              </svg>
+            </h2>
             <p id="summary-period-label" class="text-xs text-[#7A6555]">ข้อมูลในช่วง 7 วันล่าสุด</p>
           </div>
         </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
-        <!-- ฝั่งซ้าย: ข้อความสรุปสไตล์บันทึก + การ์ดตัวเลข -->
+        <!-- ฝั่งซ้าย -->
         <div class="md:col-span-7 space-y-3">
-          <!-- กล่องตัวเลขไฮไลต์ 3 ใบ -->
           <div class="grid grid-cols-3 gap-2.5">
             <div class="kawaii-subcard bg-[#F9C6C9]/45 p-3 text-center">
               <p class="font-cute text-[11px] sm:text-xs font-bold text-[#6D5645]">ยอดรวมทั้งหมด</p>
@@ -327,7 +352,7 @@
             </div>
             <div class="kawaii-subcard bg-[#FCE8A6]/55 p-3 text-center">
               <p class="font-cute text-[11px] sm:text-xs font-bold text-[#6D5645]">หมวดจ่ายสูงสุด</p>
-              <p id="stat-top-cat" class="font-cute text-sm sm:text-base font-bold text-[#4A3B32] mt-1 truncate">-</p>
+              <div id="stat-top-cat" class="font-cute text-sm sm:text-base font-bold text-[#4A3B32] mt-1 flex items-center justify-center gap-1 truncate">-</div>
             </div>
             <div class="kawaii-subcard bg-[#C5E0F5]/55 p-3 text-center">
               <p class="font-cute text-[11px] sm:text-xs font-bold text-[#6D5645]">จำนวนรายการ</p>
@@ -335,18 +360,41 @@
             </div>
           </div>
 
-          <!-- สรุปแบบประโยคไดอารี่พร้อมหน้าน้องแมว -->
           <div class="bg-[#F7EFE5]/70 border-2 border-[#4A3B32] rounded-2xl p-3.5 space-y-2.5 text-xs sm:text-sm">
             <div class="flex items-center gap-2.5">
-              <span class="text-lg">🐱</span>
+              <svg class="w-6 h-6 shrink-0" viewBox="0 0 36 36">
+                <polygon points="7,15 9,5 16,11" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2" stroke-linejoin="round"/>
+                <polygon points="29,15 27,5 20,11" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2" stroke-linejoin="round"/>
+                <circle cx="18" cy="20" r="11" fill="#FFF3B0" stroke="#4A3B32" stroke-width="2"/>
+                <circle cx="14" cy="19" r="1.5" fill="#4A3B32"/>
+                <circle cx="22" cy="19" r="1.5" fill="#4A3B32"/>
+                <path d="M16,22 Q18,24 20,22" fill="none" stroke="#4A3B32" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
               <p id="diary-line-1" class="font-medium">ช่วงนี้ใช้เงินเฉลี่ยวันละ <span class="font-bold underline decoration-[#F9C6C9] decoration-4">0 บาท</span></p>
             </div>
             <div class="flex items-center gap-2.5">
-              <span class="text-lg">🐹</span>
-              <p id="diary-line-2" class="font-medium">หมวดที่จ่ายบ่อยที่สุดคือ <span class="font-bold">-</span></p>
+              <svg class="w-6 h-6 shrink-0" viewBox="0 0 36 36">
+                <circle cx="9" cy="11" r="3.5" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
+                <circle cx="27" cy="11" r="3.5" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
+                <circle cx="18" cy="20" r="11" fill="#FADADD" stroke="#4A3B32" stroke-width="2"/>
+                <circle cx="14" cy="19" r="1.5" fill="#4A3B32"/>
+                <circle cx="22" cy="19" r="1.5" fill="#4A3B32"/>
+                <ellipse cx="11" cy="22" rx="2" ry="1.2" fill="#FF8FA3"/>
+                <ellipse cx="25" cy="22" rx="2" ry="1.2" fill="#FF8FA3"/>
+                <circle cx="18" cy="22" r="1.2" fill="#4A3B32"/>
+              </svg>
+              <p id="diary-line-2" class="font-medium flex items-center flex-wrap gap-1">หมวดที่จ่ายบ่อยที่สุดคือ <span class="font-bold">-</span></p>
             </div>
             <div class="flex items-center gap-2.5">
-              <span class="text-lg">🦊</span>
+              <svg class="w-6 h-6 shrink-0" viewBox="0 0 36 36">
+                <polygon points="7,16 9,5 17,12" fill="#F4A261" stroke="#4A3B32" stroke-width="2" stroke-linejoin="round"/>
+                <polygon points="29,16 27,5 19,12" fill="#F4A261" stroke="#4A3B32" stroke-width="2" stroke-linejoin="round"/>
+                <circle cx="18" cy="20" r="11" fill="#F6BD60" stroke="#4A3B32" stroke-width="2"/>
+                <path d="M9,22 Q18,29 27,22 Q24,31 18,31 Q12,31 9,22 Z" fill="#FFFDF9"/>
+                <circle cx="14" cy="19" r="1.5" fill="#4A3B32"/>
+                <circle cx="22" cy="19" r="1.5" fill="#4A3B32"/>
+                <circle cx="18" cy="23" r="1.8" fill="#4A3B32"/>
+              </svg>
               <p id="diary-line-3" class="font-medium">วันที่เสียตังค์เยอะสุดคือ <span class="font-bold">-</span></p>
             </div>
           </div>
@@ -356,7 +404,6 @@
         <div class="md:col-span-5 kawaii-subcard bg-[#FFFDF9] p-4 flex flex-col items-center">
           <p class="font-cute text-xs font-bold text-[#6D5645] mb-3">สัดส่วนค่าใช้จ่ายตามหมวดหมู่</p>
           <div class="flex items-center gap-4 w-full justify-center">
-            <!-- SVG Donut Chart -->
             <div class="relative w-28 h-28 shrink-0">
               <svg id="donut-chart" class="w-full h-full -rotate-90" viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="36" fill="transparent" stroke="#F0E6D8" stroke-width="16" />
@@ -367,22 +414,18 @@
               </div>
             </div>
 
-            <!-- Legend รายการหมวดหมู่ -->
-            <div id="category-legend" class="space-y-1.5 text-xs flex-1 min-w-0">
-              <!-- เติมด้วย JS -->
-            </div>
+            <div id="category-legend" class="space-y-1.5 text-xs flex-1 min-w-0"></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. ดอกไม้ค่าใช้จ่าย 7 วันของเรา (7-Day Expense Flower Tracker) -->
+    <!-- 3. ดอกไม้ค่าใช้จ่าย 7 วันของเรา (มีปุ่มสลับมุมมอง: สวนดอกไม้ <-> กราฟแท่ง 7 วัน) -->
     <section class="kawaii-card p-5 sm:p-6 relative overflow-hidden">
       <div class="absolute -top-6 -right-6 w-24 h-24 rounded-full bg-[#BCE3C6]/45 pointer-events-none"></div>
 
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 relative z-10">
         <div class="flex items-center gap-2.5">
-          <!-- ไอคอนดอกไม้ -->
           <svg class="w-8 h-8 shrink-0" viewBox="0 0 48 48">
             <circle cx="24" cy="14" r="6" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2.2"/>
             <circle cx="33" cy="20" r="6" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2.2"/>
@@ -392,30 +435,63 @@
             <circle cx="24" cy="24" r="6.5" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2.2"/>
           </svg>
           <div>
-            <h2 class="font-cute font-bold text-lg sm:text-xl text-[#4A3B32]">ดอกไม้ค่าใช้จ่าย 7 วันของเรา 🌷</h2>
-            <p class="text-xs text-[#7A6555]">ดูแลเงินวันละนิด ดอกไม้ก็ค่อยๆ เติบโต (ย้อนหลัง 7 วันล่าสุด)</p>
+            <h2 class="font-cute font-bold text-lg sm:text-xl text-[#4A3B32] flex items-center gap-1.5">
+              <span>ดอกไม้ค่าใช้จ่าย 7 วันของเรา</span>
+              <svg class="w-5 h-5 inline shrink-0" viewBox="0 0 32 32">
+                <path d="M16,18 V29" stroke="#588157" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M16,25 Q10,21 9,25 Q12,28 16,25" fill="#A3B18A" stroke="#4A3B32" stroke-width="1.6"/>
+                <path d="M10,13 C9,6 13,5 16,8 C19,5 23,6 22,13 C21,18 11,18 10,13 Z" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
+              </svg>
+            </h2>
+            <p class="text-xs text-[#7A6555]">สีพื้นหลังและดอกไม้เปลี่ยนตามยอดจ่ายแต่ละวัน (ย้อนหลัง 7 วันล่าสุด)</p>
           </div>
+        </div>
+
+        <!-- ปุ่มสลับแท็บเล็กๆ มุมขวาบนของกล่อง 7 วัน -->
+        <div class="self-start sm:self-auto flex items-center gap-1 bg-[#F7EFE5] p-1 rounded-full border-2 border-[#4A3B32] shadow-[2px_2px_0px_#4A3B32]">
+          <button type="button" onclick="switch7DayTab('flower')" id="tab-7day-flower" class="py-1 px-3 rounded-full font-cute text-xs font-bold bg-[#BCE3C6] border border-[#4A3B32] text-[#4A3B32] flex items-center gap-1.5 transition-all cursor-pointer">
+            <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 32 32">
+              <circle cx="16" cy="8" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
+              <circle cx="23" cy="13" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
+              <circle cx="20" cy="22" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
+              <circle cx="12" cy="22" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
+              <circle cx="9" cy="13" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
+              <circle cx="16" cy="16" r="4" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2"/>
+            </svg>
+            <span>สวนดอกไม้</span>
+          </button>
+          <button type="button" onclick="switch7DayTab('bar')" id="tab-7day-bar" class="py-1 px-3 rounded-full font-cute text-xs font-bold text-[#7A6555] flex items-center gap-1.5 transition-all cursor-pointer">
+            <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24">
+              <rect x="4" y="12" width="4" height="8" rx="1" fill="#BCE3C6" stroke="#4A3B32" stroke-width="1.8"/>
+              <rect x="10" y="6" width="4" height="14" rx="1" fill="#F9C6C9" stroke="#4A3B32" stroke-width="1.8"/>
+              <rect x="16" y="10" width="4" height="10" rx="1" fill="#FCE8A6" stroke="#4A3B32" stroke-width="1.8"/>
+            </svg>
+            <span>กราฟแท่ง</span>
+          </button>
         </div>
       </div>
 
-      <!-- ตารางดอกไม้ 7 วัน -->
-      <div id="flower-grid" class="grid grid-cols-7 gap-1.5 sm:gap-2.5">
-        <!-- เติมด้วย JS -->
+      <!-- มุมมองที่ 1: ตารางดอกไม้ 7 วัน -->
+      <div id="view-7day-flower" class="grid grid-cols-7 gap-1.5 sm:gap-2.5"></div>
+
+      <!-- มุมมองที่ 2: กราฟแท่ง 7 วันล่าสุด (สีแท่งตรงกับระดับความประหยัด) -->
+      <div id="view-7day-bar" class="hidden bg-[#FFFDF9] border-2 border-[#4A3B32] rounded-2xl p-3 sm:p-4">
+        <div id="seven-day-bar-chart" class="h-44 flex items-end justify-around gap-2 sm:gap-4 pt-4 px-2 border-b-2 border-[#4A3B32]"></div>
       </div>
 
-      <!-- คำอธิบายระดับดอกไม้ -->
+      <!-- คำอธิบายสีพื้นหลัง & ระดับดอกไม้ (ใช้ร่วมกันได้ทั้ง 2 มุมมอง!) -->
       <div class="mt-4 pt-3 border-t-2 border-dashed border-[#DFD3C3] flex flex-wrap items-center justify-center gap-4 text-xs font-cute">
         <div class="flex items-center gap-1.5">
           <span class="w-3.5 h-3.5 rounded-full bg-[#BCE3C6] border-2 border-[#4A3B32] inline-block"></span>
-          <span>ประหยัดมาก (0 - 150 ฿)</span>
+          <span>สีเขียว: ประหยัดมาก (0 - 150 ฿)</span>
         </div>
         <div class="flex items-center gap-1.5">
           <span class="w-3.5 h-3.5 rounded-full bg-[#FCE8A6] border-2 border-[#4A3B32] inline-block"></span>
-          <span>จ่ายปานกลาง (151 - 500 ฿)</span>
+          <span>สีเหลือง: จ่ายปานกลาง (151 - 500 ฿)</span>
         </div>
         <div class="flex items-center gap-1.5">
           <span class="w-3.5 h-3.5 rounded-full bg-[#F9C6C9] border-2 border-[#4A3B32] inline-block"></span>
-          <span>จ่ายเยอะมาก (&gt; 500 ฿)</span>
+          <span>สีชมพู: จ่ายเยอะมาก (&gt; 500 ฿)</span>
         </div>
       </div>
     </section>
@@ -424,39 +500,47 @@
     <section class="kawaii-card p-5 sm:p-6">
       <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-5">
         <div class="flex items-center gap-2.5">
-          <span class="text-2xl">📔</span>
+          <svg class="w-8 h-8 shrink-0" viewBox="0 0 36 36">
+            <rect x="7" y="5" width="22" height="26" rx="4" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2.2"/>
+            <path d="M12,5 V31" stroke="#4A3B32" stroke-width="2"/>
+            <rect x="16" y="10" width="9" height="4" rx="1.5" fill="#F9C6C9" stroke="#4A3B32" stroke-width="1.6"/>
+            <path d="M16,19 H25 M16,23 H22" stroke="#4A3B32" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
           <div>
             <h2 class="font-cute font-bold text-lg sm:text-xl text-[#4A3B32]">ไดอารี่การจ่ายเงิน</h2>
             <p class="text-xs text-[#7A6555]">ค้นหา กรองหมวดหมู่ และเรียงลำดับรายการได้ตามใจชอบ</p>
           </div>
         </div>
 
-        <!-- ปุ่มรีเซ็ตข้อมูลตัวอย่าง -->
-        <button onclick="resetSampleData()" class="self-start md:self-auto text-xs font-cute font-bold px-3 py-1.5 rounded-full bg-[#F7EFE5] hover:bg-[#FCE8A6] border-2 border-[#4A3B32] transition-colors">
-          🔄 รีเซ็ตข้อมูลตัวอย่าง
+        <button onclick="resetSampleData()" class="self-start md:self-auto text-xs font-cute font-bold px-3.5 py-1.5 rounded-full bg-[#F7EFE5] hover:bg-[#FCE8A6] border-2 border-[#4A3B32] flex items-center gap-1.5 transition-colors cursor-pointer">
+          <svg class="w-3.5 h-3.5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="#4A3B32" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+            <path d="M3 3v5h5"/>
+          </svg>
+          <span>รีเซ็ตข้อมูลตัวอย่าง</span>
         </button>
       </div>
 
       <!-- แถบเครื่องมือ Search / Filter หมวดหมู่ / Sort -->
       <div class="grid grid-cols-1 sm:grid-cols-12 gap-2.5 mb-5">
-        <!-- ค้นหา -->
         <div class="sm:col-span-5 relative">
-          <span class="absolute left-3.5 top-1/2 -translate-y-1/2 text-sm">🔍</span>
+          <svg class="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="#4A3B32" stroke-width="2.5" stroke-linecap="round">
+            <circle cx="11" cy="11" r="7"/>
+            <path d="M20 20l-3.5-3.5"/>
+          </svg>
           <input type="text" id="search-input" oninput="renderApp()" placeholder="ค้นหาชื่อรายการ..." class="kawaii-input w-full pl-9 pr-3 py-2 text-xs sm:text-sm" />
         </div>
 
-        <!-- กรองหมวดหมู่ -->
         <div class="sm:col-span-3">
           <select id="category-filter" onchange="renderApp()" class="kawaii-input w-full px-3 py-2 text-xs sm:text-sm font-cute font-bold cursor-pointer">
             <option value="all">หมวดหมู่: ทั้งหมด</option>
-            <option value="อาหาร">🍙 อาหาร</option>
-            <option value="เดินทาง">🚌 เดินทาง</option>
-            <option value="ช้อปปิ้ง">🛍️ ช้อปปิ้ง</option>
-            <option value="บิล/อื่นๆ">🧾 บิล/อื่นๆ</option>
+            <option value="อาหาร">อาหาร</option>
+            <option value="เดินทาง">เดินทาง</option>
+            <option value="ช้อปปิ้ง">ช้อปปิ้ง</option>
+            <option value="บิล/อื่นๆ">บิล/อื่นๆ</option>
           </select>
         </div>
 
-        <!-- เรียงลำดับ (Sort) -->
         <div class="sm:col-span-4">
           <select id="sort-select" onchange="renderApp()" class="kawaii-input w-full px-3 py-2 text-xs sm:text-sm font-cute font-bold cursor-pointer bg-[#FFFDF9]">
             <option value="date-desc">เรียง: วันที่ล่าสุด ➔ เก่าสุด</option>
@@ -468,9 +552,7 @@
       </div>
 
       <!-- รายการการ์ดไดอารี่ -->
-      <div id="transaction-list" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-        <!-- เติมด้วย JS -->
-      </div>
+      <div id="transaction-list" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
     </section>
 
   </main>
@@ -483,7 +565,10 @@
       'อาหาร': {
         color: '#F9C6C9',
         badgeBg: 'bg-[#F9C6C9]',
-        emoji: '🍙',
+        iconSvg: `<svg class="w-4 h-4 inline shrink-0" viewBox="0 0 32 32">
+          <path d="M16,5 C9,5 4,18 5,24 C6,27 26,27 27,24 C28,18 23,5 16,5 Z" fill="#FFFDF9" stroke="#4A3B32" stroke-width="2.2" stroke-linejoin="round"/>
+          <rect x="11" y="18" width="10" height="8" rx="1.5" fill="#4A3B32"/>
+        </svg>`,
         animalSvg: `<svg class="w-8 h-8" viewBox="0 0 48 48">
           <circle cx="14" cy="14" r="5" fill="#D4A373" stroke="#4A3B32" stroke-width="2"/>
           <circle cx="34" cy="14" r="5" fill="#D4A373" stroke="#4A3B32" stroke-width="2"/>
@@ -497,7 +582,13 @@
       'เดินทาง': {
         color: '#C5E0F5',
         badgeBg: 'bg-[#C5E0F5]',
-        emoji: '🚌',
+        iconSvg: `<svg class="w-4 h-4 inline shrink-0" viewBox="0 0 32 32">
+          <rect x="4" y="8" width="24" height="15" rx="4" fill="#C5E0F5" stroke="#4A3B32" stroke-width="2.2"/>
+          <rect x="7" y="11" width="7" height="5" rx="1" fill="#FFFDF9" stroke="#4A3B32" stroke-width="1.6"/>
+          <rect x="17" y="11" width="8" height="5" rx="1" fill="#FFFDF9" stroke="#4A3B32" stroke-width="1.6"/>
+          <circle cx="10" cy="24" r="3" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2"/>
+          <circle cx="22" cy="24" r="3" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2"/>
+        </svg>`,
         animalSvg: `<svg class="w-8 h-8" viewBox="0 0 48 48">
           <polygon points="11,18 14,8 22,14" fill="#BDBDBD" stroke="#4A3B32" stroke-width="2"/>
           <polygon points="37,18 34,8 26,14" fill="#BDBDBD" stroke="#4A3B32" stroke-width="2"/>
@@ -512,7 +603,11 @@
       'ช้อปปิ้ง': {
         color: '#FCE8A6',
         badgeBg: 'bg-[#FCE8A6]',
-        emoji: '🛍️',
+        iconSvg: `<svg class="w-4 h-4 inline shrink-0" viewBox="0 0 32 32">
+          <path d="M11,11 V9 A5,5 0 0,1 21,9 V11" fill="none" stroke="#4A3B32" stroke-width="2.2" stroke-linecap="round"/>
+          <rect x="6" y="11" width="20" height="16" rx="3" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2.2"/>
+          <circle cx="16" cy="19" r="2.2" fill="#F9C6C9" stroke="#4A3B32" stroke-width="1.5"/>
+        </svg>`,
         animalSvg: `<svg class="w-8 h-8" viewBox="0 0 48 48">
           <polygon points="11,19 13,7 22,15" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2"/>
           <polygon points="37,19 35,7 26,15" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2"/>
@@ -527,7 +622,10 @@
       'บิล/อื่นๆ': {
         color: '#E2D1F9',
         badgeBg: 'bg-[#E2D1F9]',
-        emoji: '🧾',
+        iconSvg: `<svg class="w-4 h-4 inline shrink-0" viewBox="0 0 32 32">
+          <path d="M8,5 H24 V27 L21,25 L18,27 L16,25 L14,27 L11,25 L8,27 Z" fill="#FFFDF9" stroke="#4A3B32" stroke-width="2.2" stroke-linejoin="round"/>
+          <path d="M12,11 H20 M12,16 H18" stroke="#4A3B32" stroke-width="2" stroke-linecap="round"/>
+        </svg>`,
         animalSvg: `<svg class="w-8 h-8" viewBox="0 0 48 48">
           <ellipse cx="17" cy="12" rx="3.5" ry="7" fill="#FFFDF9" stroke="#4A3B32" stroke-width="2"/>
           <ellipse cx="31" cy="12" rx="3.5" ry="7" fill="#FFFDF9" stroke="#4A3B32" stroke-width="2"/>
@@ -539,9 +637,48 @@
       }
     };
 
+    const TINY_ANIMALS_SVG = [
+      `<svg class="w-5 h-5 mx-auto" viewBox="0 0 32 32"><circle cx="8" cy="9" r="3.5" fill="#D4A373" stroke="#4A3B32" stroke-width="1.8"/><circle cx="24" cy="9" r="3.5" fill="#D4A373" stroke="#4A3B32" stroke-width="1.8"/><circle cx="16" cy="18" r="10" fill="#E6CCB2" stroke="#4A3B32" stroke-width="1.8"/><circle cx="12.5" cy="17" r="1.3" fill="#4A3B32"/><circle cx="19.5" cy="17" r="1.3" fill="#4A3B32"/><circle cx="16" cy="20" r="1.5" fill="#4A3B32"/></svg>`,
+      `<svg class="w-5 h-5 mx-auto" viewBox="0 0 32 32"><ellipse cx="11" cy="8" rx="2.5" ry="5.5" fill="#FFFDF9" stroke="#4A3B32" stroke-width="1.8"/><ellipse cx="21" cy="8" rx="2.5" ry="5.5" fill="#FFFDF9" stroke="#4A3B32" stroke-width="1.8"/><circle cx="16" cy="19" r="9.5" fill="#FFFDF9" stroke="#4A3B32" stroke-width="1.8"/><circle cx="12.5" cy="18" r="1.3" fill="#4A3B32"/><circle cx="19.5" cy="18" r="1.3" fill="#4A3B32"/><path d="M14.5,21 L16,22.5 L17.5,21" fill="none" stroke="#4A3B32" stroke-width="1.5"/></svg>`,
+      `<svg class="w-5 h-5 mx-auto" viewBox="0 0 32 32"><polygon points="6,14 8,5 14,10" fill="#FCE8A6" stroke="#4A3B32" stroke-width="1.8"/><polygon points="26,14 24,5 18,10" fill="#FCE8A6" stroke="#4A3B32" stroke-width="1.8"/><circle cx="16" cy="18" r="10" fill="#FFF3B0" stroke="#4A3B32" stroke-width="1.8"/><circle cx="12.5" cy="17" r="1.3" fill="#4A3B32"/><circle cx="19.5" cy="17" r="1.3" fill="#4A3B32"/><path d="M14,20 Q16,22 18,20" fill="none" stroke="#4A3B32" stroke-width="1.5"/></svg>`,
+      `<svg class="w-5 h-5 mx-auto" viewBox="0 0 32 32"><ellipse cx="7" cy="17" rx="3" ry="5" fill="#C69C6D" stroke="#4A3B32" stroke-width="1.8"/><ellipse cx="25" cy="17" rx="3" ry="5" fill="#C69C6D" stroke="#4A3B32" stroke-width="1.8"/><circle cx="16" cy="18" r="10" fill="#FAEDCD" stroke="#4A3B32" stroke-width="1.8"/><circle cx="12.5" cy="17" r="1.3" fill="#4A3B32"/><circle cx="19.5" cy="17" r="1.3" fill="#4A3B32"/><circle cx="16" cy="20" r="1.6" fill="#4A3B32"/></svg>`,
+      `<svg class="w-5 h-5 mx-auto" viewBox="0 0 32 32"><polygon points="6,14 8,5 15,11" fill="#F4A261" stroke="#4A3B32" stroke-width="1.8"/><polygon points="26,14 24,5 17,11" fill="#F4A261" stroke="#4A3B32" stroke-width="1.8"/><circle cx="16" cy="18" r="10" fill="#F6BD60" stroke="#4A3B32" stroke-width="1.8"/><circle cx="12.5" cy="17" r="1.3" fill="#4A3B32"/><circle cx="19.5" cy="17" r="1.3" fill="#4A3B32"/><circle cx="16" cy="21" r="1.5" fill="#4A3B32"/></svg>`,
+      `<svg class="w-5 h-5 mx-auto" viewBox="0 0 32 32"><circle cx="8" cy="9" r="3.5" fill="#4A3B32"/><circle cx="24" cy="9" r="3.5" fill="#4A3B32"/><circle cx="16" cy="18" r="10" fill="#FFFDF9" stroke="#4A3B32" stroke-width="1.8"/><ellipse cx="12" cy="17" rx="2.5" ry="2" fill="#4A3B32"/><ellipse cx="20" cy="17" rx="2.5" ry="2" fill="#4A3B32"/><circle cx="12" cy="17" r="0.8" fill="#FFF"/><circle cx="20" cy="17" r="0.8" fill="#FFF"/><circle cx="16" cy="21" r="1.3" fill="#4A3B32"/></svg>`,
+      `<svg class="w-5 h-5 mx-auto" viewBox="0 0 32 32"><circle cx="8" cy="10" r="3" fill="#F9C6C9" stroke="#4A3B32" stroke-width="1.8"/><circle cx="24" cy="10" r="3" fill="#F9C6C9" stroke="#4A3B32" stroke-width="1.8"/><circle cx="16" cy="18" r="10" fill="#FADADD" stroke="#4A3B32" stroke-width="1.8"/><circle cx="12.5" cy="17" r="1.3" fill="#4A3B32"/><circle cx="19.5" cy="17" r="1.3" fill="#4A3B32"/><circle cx="16" cy="20" r="1.2" fill="#4A3B32"/></svg>`
+    ];
+
+    const TOAST_ICONS = {
+      flower: `<svg class="w-5 h-5" viewBox="0 0 32 32"><circle cx="16" cy="8" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/><circle cx="23" cy="13" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/><circle cx="20" cy="22" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/><circle cx="12" cy="22" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/><circle cx="9" cy="13" r="4" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/><circle cx="16" cy="16" r="4" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2"/></svg>`,
+      trash: `<svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#4A3B32" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6l1 14h10l1-14"/><path d="M10 11v5M14 11v5"/></svg>`,
+      sparkle: `<svg class="w-5 h-5" viewBox="0 0 24 24"><path d="M12,2 L14.2,9.8 L22,12 L14.2,14.2 L12,22 L9.8,14.2 L2,12 L9.8,9.8 Z" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2" stroke-linejoin="round"/></svg>`
+    };
+
     // ==========================================
-    // 2. Helper จัดการวันที่ (Local Time YYYY-MM-DD)
+    // 2. Helper จัดการวันที่ & สลับแท็บส่วน 7 วัน
     // ==========================================
+    function switch7DayTab(tab) {
+      const btnFlower = document.getElementById('tab-7day-flower');
+      const btnBar = document.getElementById('tab-7day-bar');
+      const viewFlower = document.getElementById('view-7day-flower');
+      const viewBar = document.getElementById('view-7day-bar');
+
+      if (tab === 'flower') {
+        btnFlower.classList.add('bg-[#BCE3C6]', 'border', 'border-[#4A3B32]', 'text-[#4A3B32]');
+        btnFlower.classList.remove('text-[#7A6555]');
+        btnBar.classList.remove('bg-[#BCE3C6]', 'border', 'border-[#4A3B32]', 'text-[#4A3B32]');
+        btnBar.classList.add('text-[#7A6555]');
+        viewFlower.classList.remove('hidden');
+        viewBar.classList.add('hidden');
+      } else {
+        btnBar.classList.add('bg-[#BCE3C6]', 'border', 'border-[#4A3B32]', 'text-[#4A3B32]');
+        btnBar.classList.remove('text-[#7A6555]');
+        btnFlower.classList.remove('bg-[#BCE3C6]', 'border', 'border-[#4A3B32]', 'text-[#4A3B32]');
+        btnFlower.classList.add('text-[#7A6555]');
+        viewBar.classList.remove('hidden');
+        viewFlower.classList.add('hidden');
+      }
+    }
+
     function getLocalDateStr(offsetDays = 0) {
       const d = new Date();
       d.setDate(d.getDate() + offsetDays);
@@ -589,10 +726,10 @@
       localStorage.setItem('paotung_expenses_v1', JSON.stringify(expenses));
     }
 
-    function showToast(msg, icon = '🐻') {
+    function showToast(msg, iconKey = 'flower') {
       const toast = document.getElementById('toast');
       document.getElementById('toast-msg').textContent = msg;
-      document.getElementById('toast-icon').textContent = icon;
+      document.getElementById('toast-icon').innerHTML = TOAST_ICONS[iconKey] || TOAST_ICONS.flower;
       toast.classList.remove('hidden');
       setTimeout(() => {
         toast.classList.add('hidden');
@@ -607,7 +744,6 @@
       const startInput = document.getElementById('start-date');
       const endInput = document.getElementById('end-date');
 
-      // อัปเดตสีปุ่ม
       document.querySelectorAll('.filter-pill').forEach(btn => {
         btn.classList.remove('bg-[#F9C6C9]', 'border', 'border-[#4A3B32]');
       });
@@ -674,17 +810,16 @@
       expenses.unshift(newItem);
       saveToStorage();
 
-      // เคลียร์ช่องกรอกชื่อและราคา
       document.getElementById('input-title').value = '';
       document.getElementById('input-amount').value = '';
-      showToast(`บันทึก "${title}" (${amount.toLocaleString()} ฿) แล้วจ้า!`, '🌸');
+      showToast(`บันทึก "${title}" (${amount.toLocaleString()} ฿) แล้วจ้า!`, 'flower');
       renderApp();
     }
 
     function deleteExpense(id) {
       expenses = expenses.filter(item => item.id !== id);
       saveToStorage();
-      showToast('ลบรายการเรียบร้อยแล้ว', '🗑️');
+      showToast('ลบรายการเรียบร้อยแล้ว', 'trash');
       renderApp();
     }
 
@@ -692,7 +827,7 @@
       expenses = generateInitialData();
       saveToStorage();
       setQuickFilter('7days');
-      showToast('รีเซ็ตข้อมูลตัวอย่างเรียบร้อย!', '✨');
+      showToast('รีเซ็ตข้อมูลตัวอย่างเรียบร้อย!', 'sparkle');
     }
 
     // ==========================================
@@ -700,41 +835,34 @@
     // ==========================================
     function getFlowerSvg(amount) {
       if (amount <= 150) {
-        // บานเต็มที่ (ประหยัดมาก)
         return `<svg class="w-12 h-14 mx-auto" viewBox="0 0 60 70">
           <ellipse cx="30" cy="62" rx="16" ry="5" fill="#D4A373" stroke="#4A3B32" stroke-width="2"/>
           <path d="M30,61 L30,32" stroke="#588157" stroke-width="3" stroke-linecap="round"/>
           <path d="M30,48 Q20,42 18,48 Q22,53 30,48" fill="#A3B18A" stroke="#4A3B32" stroke-width="2"/>
           <path d="M30,43 Q40,37 42,43 Q38,48 30,43" fill="#A3B18A" stroke="#4A3B32" stroke-width="2"/>
-          <!-- กลีบดอกไม้บาน -->
           <circle cx="30" cy="15" r="7" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
           <circle cx="41" cy="22" r="7" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
           <circle cx="37" cy="34" r="7" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
           <circle cx="23" cy="34" r="7" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
           <circle cx="19" cy="22" r="7" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2"/>
-          <!-- เกสรยิ้ม -->
           <circle cx="30" cy="25" r="8" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2"/>
           <circle cx="27.5" cy="24" r="1.2" fill="#4A3B32"/>
           <circle cx="32.5" cy="24" r="1.2" fill="#4A3B32"/>
           <path d="M28,27 Q30,29 32,27" fill="none" stroke="#4A3B32" stroke-width="1.5" stroke-linecap="round"/>
         </svg>`;
       } else if (amount <= 500) {
-        // บานปานกลาง (จ่ายปานกลาง)
         return `<svg class="w-12 h-14 mx-auto" viewBox="0 0 60 70">
           <ellipse cx="30" cy="62" rx="16" ry="5" fill="#D4A373" stroke="#4A3B32" stroke-width="2"/>
           <path d="M30,61 L30,36" stroke="#588157" stroke-width="3" stroke-linecap="round"/>
           <path d="M30,50 Q21,45 19,50 Q23,55 30,50" fill="#A3B18A" stroke="#4A3B32" stroke-width="2"/>
-          <!-- ดอกทิวลิป/บานครึ่ง -->
           <path d="M20,34 C18,20 25,16 30,22 C35,16 42,20 40,34 C38,40 22,40 20,34 Z" fill="#FCE8A6" stroke="#4A3B32" stroke-width="2.2"/>
           <path d="M25,22 L30,15 L35,22" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2" stroke-linejoin="round"/>
         </svg>`;
       } else {
-        // ดอกตูมหุบ (จ่ายเยอะมาก)
         return `<svg class="w-12 h-14 mx-auto" viewBox="0 0 60 70">
           <ellipse cx="30" cy="62" rx="16" ry="5" fill="#D4A373" stroke="#4A3B32" stroke-width="2"/>
           <path d="M30,61 Q32,48 27,38" fill="none" stroke="#588157" stroke-width="3" stroke-linecap="round"/>
           <path d="M29,51 Q38,47 40,52 Q35,56 29,51" fill="#A3B18A" stroke="#4A3B32" stroke-width="2"/>
-          <!-- ดอกตูมเล็ก -->
           <circle cx="26" cy="33" r="7" fill="#F9C6C9" stroke="#4A3B32" stroke-width="2.2"/>
           <path d="M20,35 Q26,41 32,35" fill="#A3B18A" stroke="#4A3B32" stroke-width="2"/>
         </svg>`;
@@ -742,7 +870,7 @@
     }
 
     // ==========================================
-    // 7. Render ภาพรวมทั้งหมด (Dashboard, Flowers, List)
+    // 7. Render ภาพรวมทั้งหมด
     // ==========================================
     function renderApp() {
       const startDate = document.getElementById('start-date').value;
@@ -751,7 +879,6 @@
       const catFilter = document.getElementById('category-filter').value;
       const sortOption = document.getElementById('sort-select').value;
 
-      // กรองตามช่วงวันที่ (Global Date Filter) สำหรับ Dashboard
       const dateFiltered = expenses.filter(item => {
         if (startDate && item.date < startDate) return false;
         if (endDate && item.date > endDate) return false;
@@ -763,7 +890,6 @@
       document.getElementById('stat-total').textContent = `${totalAmount.toLocaleString()} ฿`;
       document.getElementById('stat-count').textContent = `${dateFiltered.length} รายการ`;
 
-      // คำนวณยอดแยกตามหมวดหมู่ & วันที่
       const catTotals = { 'อาหาร': 0, 'เดินทาง': 0, 'ช้อปปิ้ง': 0, 'บิล/อื่นๆ': 0 };
       const catCounts = { 'อาหาร': 0, 'เดินทาง': 0, 'ช้อปปิ้ง': 0, 'บิล/อื่นๆ': 0 };
       const dateTotals = {};
@@ -774,7 +900,6 @@
         dateTotals[item.date] = (dateTotals[item.date] || 0) + item.amount;
       });
 
-      // หาหมวดหมู่ที่จ่ายสูงสุด
       let topCat = '-';
       let maxCatVal = 0;
       Object.entries(catTotals).forEach(([cat, val]) => {
@@ -783,9 +908,10 @@
           topCat = cat;
         }
       });
-      document.getElementById('stat-top-cat').textContent = maxCatVal > 0 ? `${CATEGORY_CONFIG[topCat].emoji} ${topCat}` : '-';
+      document.getElementById('stat-top-cat').innerHTML = maxCatVal > 0
+        ? `${CATEGORY_CONFIG[topCat].iconSvg} <span>${topCat}</span>`
+        : '-';
 
-      // หาหมวดที่จ่ายบ่อยสุด
       let freqCat = '-';
       let maxFreq = 0;
       Object.entries(catCounts).forEach(([cat, cnt]) => {
@@ -795,7 +921,6 @@
         }
       });
 
-      // หาวันที่เสียตังค์เยอะสุด
       let maxDay = '-';
       let maxDayVal = 0;
       Object.entries(dateTotals).forEach(([d, val]) => {
@@ -810,11 +935,11 @@
 
       document.getElementById('diary-line-1').innerHTML = `ช่วงนี้ใช้เงินเฉลี่ยวันละ <span class="font-bold underline decoration-[#F9C6C9] decoration-4">${avgPerDay.toLocaleString()} บาท</span>`;
       document.getElementById('diary-line-2').innerHTML = maxFreq > 0
-        ? `หมวดที่จ่ายบ่อยที่สุดคือ <span class="font-bold">${CATEGORY_CONFIG[freqCat].emoji} ${freqCat} (${maxFreq} ครั้ง)</span>`
-        : `ยังไม่มีรายการในช่วงเวลานี้ ลองเพิ่มรายการด้านบนดูนะ!`;
+        ? `<span>หมวดที่จ่ายบ่อยที่สุดคือ</span> <span class="font-bold inline-flex items-center gap-1">${CATEGORY_CONFIG[freqCat].iconSvg} ${freqCat} (${maxFreq} ครั้ง)</span>`
+        : `<span>ยังไม่มีรายการในช่วงเวลานี้ ลองเพิ่มรายการด้านบนดูนะ!</span>`;
       document.getElementById('diary-line-3').innerHTML = maxDayVal > 0
         ? `วันที่เสียตังค์เยอะสุดคือ <span class="font-bold">${formatThaiDate(maxDay)} (${maxDayVal.toLocaleString()} ฿)</span>`
-        : `วันนี้อากาศแจ่มใส กระเป๋าตังค์ยังอยู่ครบ ✨`;
+        : `วันนี้อากาศแจ่มใส กระเป๋าตังค์ยังอยู่ครบ`;
 
       // --- B. วาด Donut Chart & Legend ---
       const donutSvg = document.getElementById('donut-chart');
@@ -822,7 +947,6 @@
       const radius = 36;
       const circumference = 2 * Math.PI * radius;
 
-      // ลบเส้นเดิมยกเว้นพื้นหลัง
       donutSvg.innerHTML = `<circle cx="50" cy="50" r="${radius}" fill="transparent" stroke="#F0E6D8" stroke-width="16" />`;
       legendContainer.innerHTML = '';
 
@@ -859,38 +983,72 @@
         `;
       });
 
-      // --- C. วาดดอกไม้ค่าใช้จ่าย 7 วันล่าสุด ---
-      const flowerGrid = document.getElementById('flower-grid');
+      // --- C. วาดสวนดอกไม้ 7 วัน & กราฟแท่ง 7 วัน ---
+      const flowerGrid = document.getElementById('view-7day-flower');
+      const barChartContainer = document.getElementById('seven-day-bar-chart');
       flowerGrid.innerHTML = '';
-      const animalBadges = ['🐻', '🐰', '🐱', '🐶', '🦊', '🐼', '🐹'];
+      barChartContainer.innerHTML = '';
 
+      // เก็บข้อมูล 7 วันเพื่อหาค่าสูงสุดสำหรับสเกลความสูงของกราฟแท่ง
+      const sevenDaysData = [];
       for (let i = 6; i >= 0; i--) {
         const dStr = getLocalDateStr(-i);
         const dayTotal = expenses
           .filter(item => item.date === dStr)
           .reduce((sum, item) => sum + item.amount, 0);
+        sevenDaysData.push({
+          dStr,
+          dayTotal,
+          isToday: i === 0,
+          dayNum: Number(dStr.split('-')[2]),
+          dayShort: i === 0 ? 'วันนี้' : getThaiDayShort(dStr),
+          animalSvg: TINY_ANIMALS_SVG[6 - i]
+        });
+      }
 
-        const isToday = i === 0;
-        const dayNum = Number(dStr.split('-')[2]);
-        const dayShort = isToday ? 'วันนี้' : getThaiDayShort(dStr);
+      const maxSevenDayVal = Math.max(...sevenDaysData.map(d => d.dayTotal), 1);
 
-        let statusBg = 'bg-[#F7EFE5]/70';
-        if (isToday) statusBg = 'bg-[#F9C6C9]/35 ring-2 ring-[#4A3B32]';
+      sevenDaysData.forEach(d => {
+        // กำหนดสีตามระดับการใช้จ่าย (ใช้ร่วมกันทั้งสวนดอกไม้และแท่งกราฟ!)
+        let statusBg = 'bg-[#BCE3C6]/55';
+        let barColor = '#BCE3C6'; // เขียวมิ้นต์
+        if (d.dayTotal > 500) {
+          statusBg = 'bg-[#F9C6C9]/60';
+          barColor = '#F9C6C9'; // ชมพู
+        } else if (d.dayTotal > 150) {
+          statusBg = 'bg-[#FCE8A6]/65';
+          barColor = '#FCE8A6'; // เหลือง
+        }
 
+        const todayRing = d.isToday ? 'ring-2 ring-[#4A3B32] shadow-[2px_2px_0px_#4A3B32]' : '';
+
+        // 1. วาดการ์ดในมุมมองสวนดอกไม้
         flowerGrid.innerHTML += `
-          <div class="${statusBg} border-2 border-[#4A3B32] rounded-2xl p-1.5 sm:p-2 text-center flex flex-col justify-between transition-transform hover:-translate-y-1">
-            <div title="ยอดจ่าย ${dayTotal.toLocaleString()} บาท">
-              ${getFlowerSvg(dayTotal)}
+          <div class="${statusBg} ${todayRing} border-2 border-[#4A3B32] rounded-2xl p-1.5 sm:p-2 text-center flex flex-col justify-between transition-transform hover:-translate-y-1">
+            <div title="ยอดจ่าย ${d.dayTotal.toLocaleString()} บาท">
+              ${getFlowerSvg(d.dayTotal)}
             </div>
             <div class="mt-1">
-              <p class="font-cute text-[10px] sm:text-xs font-bold ${isToday ? 'text-[#D64550]' : 'text-[#7A6555]'}">${dayShort}</p>
-              <p class="font-cute text-xs sm:text-sm font-bold text-[#4A3B32]">${dayNum}</p>
-              <p class="text-[10px] font-bold text-[#6D5645] mt-0.5 truncate">${dayTotal > 0 ? dayTotal.toLocaleString() + '฿' : '0฿'}</p>
-              <div class="mt-1 text-xs">${animalBadges[6 - i]}</div>
+              <p class="font-cute text-[10px] sm:text-xs font-bold ${d.isToday ? 'text-[#D64550]' : 'text-[#4A3B32]'}">${d.dayShort}</p>
+              <p class="font-cute text-xs sm:text-sm font-bold text-[#4A3B32]">${d.dayNum}</p>
+              <p class="text-[10px] font-bold text-[#4A3B32] bg-white/75 rounded-full px-1 py-0.5 mt-0.5 truncate">${d.dayTotal > 0 ? d.dayTotal.toLocaleString() + '฿' : '0฿'}</p>
+              <div class="mt-1">${d.animalSvg}</div>
             </div>
           </div>
         `;
-      }
+
+        // 2. วาดแท่งกราฟในมุมมองกราฟแท่ง 7 วัน
+        const barHeightPct = d.dayTotal === 0 ? 6 : Math.max(Math.round((d.dayTotal / maxSevenDayVal) * 100), 12);
+        barChartContainer.innerHTML += `
+          <div class="flex-1 flex flex-col items-center justify-end h-full gap-1 min-w-0 group">
+            <span class="font-cute text-[10px] sm:text-xs font-bold text-[#4A3B32] bg-[#F7EFE5] px-1.5 py-0.5 rounded-full border border-[#4A3B32]">${d.dayTotal.toLocaleString()}฿</span>
+            <div class="w-full max-w-[40px] rounded-t-xl border-2 border-[#4A3B32] transition-all duration-300 group-hover:-translate-y-0.5" style="height: ${barHeightPct * 0.65}%; background-color: ${barColor}" title="${formatThaiDate(d.dStr)}: ${d.dayTotal.toLocaleString()} บาท"></div>
+            <div class="text-center pt-1">
+              <p class="font-cute text-[10px] sm:text-xs font-bold ${d.isToday ? 'text-[#D64550]' : 'text-[#4A3B32]'}">${d.dayShort} ${d.dayNum}</p>
+            </div>
+          </div>
+        `;
+      });
 
       // --- D. กรองและเรียงลำดับรายการไดอารี่ด้านล่าง ---
       let listItems = dateFiltered.filter(item => {
@@ -911,7 +1069,10 @@
       if (listItems.length === 0) {
         listContainer.innerHTML = `
           <div class="col-span-full text-center py-8 bg-[#F7EFE5]/50 rounded-2xl border-2 border-dashed border-[#C8B6A6]">
-            <p class="text-3xl mb-2">🍃</p>
+            <svg class="w-10 h-10 mx-auto mb-2" viewBox="0 0 36 36">
+              <path d="M18,6 C9,6 6,16 8,24 C10,29 22,29 27,22 C30,17 26,6 18,6 Z" fill="#BCE3C6" stroke="#4A3B32" stroke-width="2.2"/>
+              <path d="M12,26 Q18,18 24,11" fill="none" stroke="#4A3B32" stroke-width="2" stroke-linecap="round"/>
+            </svg>
             <p class="font-cute font-bold text-sm text-[#6D5645]">ไม่พบรายการค่าใช้จ่ายที่ค้นหาเลยจ้า</p>
             <p class="text-xs text-[#8C6D53] mt-1">ลองเปลี่ยนตัวกรองช่วงเวลา หรือเพิ่มรายการใหม่ด้านบนนะ</p>
           </div>
@@ -936,8 +1097,13 @@
 
               <div class="flex items-center gap-2 shrink-0">
                 <span class="font-cute font-bold text-sm sm:text-base text-[#4A3B32]">${item.amount.toLocaleString()} ฿</span>
-                <button onclick="deleteExpense('${item.id}')" title="ลบรายการ" class="w-8 h-8 rounded-xl bg-[#F9C6C9] hover:bg-[#F4979C] border-2 border-[#4A3B32] flex items-center justify-center text-xs transition-transform active:scale-90">
-                  🗑️
+                <button onclick="deleteExpense('${item.id}')" title="ลบรายการ" class="w-8 h-8 rounded-xl bg-[#F9C6C9] hover:bg-[#F4979C] border-2 border-[#4A3B32] flex items-center justify-center transition-transform active:scale-90 cursor-pointer">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="#4A3B32" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 6h18"/>
+                    <path d="M8 6V4h8v2"/>
+                    <path d="M6 6l1 14h10l1-14"/>
+                    <path d="M10 11v5M14 11v5"/>
+                  </svg>
                 </button>
               </div>
             </div>
@@ -946,7 +1112,6 @@
       }
     }
 
-    // เริ่มต้นทำงานเมื่อโหลดหน้าเว็บ
     window.onload = function() {
       document.getElementById('input-date').value = getLocalDateStr(0);
       setQuickFilter('7days');
