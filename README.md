@@ -1,45 +1,25 @@
-# 🐻 เป๋าตุง (PaoTung) — ไดอารี่บันทึกค่าใช้จ่ายสุดคิ้วท์
+# 🐻 PaoTung (เป๋าตุง) — Kawaii Expense Tracker
 
-เว็บแอปพลิเคชันสำหรับบันทึกรายจ่ายประจำวันในรูปแบบไดอารี่ลายเส้นน่ารัก (Kawaii Pastel Theme) ช่วยให้การจดบันทึกและวางแผนการเงินเป็นเรื่องสนุกและเห็นภาพชัดเจนมากยิ่งขึ้น
+A cozy, pastel-themed personal expense tracker web application built with vanilla HTML, Tailwind CSS, and JavaScript. Track your daily spending, visualize habits with interactive blooming flowers and charts, and keep your finances cute and organized.
 
----
+## ✨ Key Features
 
-## ✨ ฟีเจอร์หลัก (Key Features)
+- **Quick Expense Logging:** Easily record daily expenses with custom titles, amounts, dates, and four pastel categories (*Food*, *Transport*, *Shopping*, *Bills/Others*), each paired with a custom SVG animal mascot.
+- **Interactive Dashboard Summary:**
+  - Real-time calculation of total spending, highest-spending category, transaction count, and daily averages.
+  - Dynamic SVG Donut Chart illustrating category proportions.
+- **7-Day Expense Flower & Bar Chart Tracker:**
+  - **Flower Garden View:** Visualizes the past 7 days of spending with color-coded backgrounds and dynamic blooming flowers (from full bloom for frugal days to drooping buds for high-spending days).
+  - **Daily Bar Chart View:** Toggle seamlessly between the flower garden and a color-synced 7-day bar chart.
+- **Smart Search, Filter & Sort:**
+  - Global date range filters (*All*, *Today*, *Last 7 Days*, *This Month*, or *Custom Date Range*).
+  - Instant keyword search, category filtering, and multi-criteria sorting (by date or amount).
+- **LocalStorage Persistence:** Automatically saves all transactions in the browser with a one-click reset option to restore sample data.
 
-### 1. 📝 บันทึกค่าใช้จ่ายด่วน (Quick Expense Entry)
-* บันทึกรายการ ชื่อสินค้า/บริการ จำนวนเงิน และวันที่จ่ายได้อย่างรวดเร็ว
-* แบ่งหมวดหมู่ชัดเจน 4 หมวดหมู่พร้อมไอคอนน้องสัตว์ประจำหมวด:
-  * **อาหาร** (Food)
-  * **เดินทาง** (Transport)
-  * **ช้อปปิ้ง** (Shopping)
-  * **บิล/อื่นๆ** (Bills & Others)
+## 🛠️ Tech Stack
 
-### 2. 📊 สรุปภาพรวมการใช้จ่าย (Financial Dashboard)
-* **ตัวกรองช่วงเวลาอัจฉริยะ (Global Date Filter):** เลือกดูข้อมูลแบบ *ทั้งหมด*, *วันนี้*, *7 วันล่าสุด*, *เดือนนี้* หรือกำหนดช่วงวันที่เองได้อิสระ
-* **การ์ดสรุปตัวเลขสำคัญ:** แสดงยอดรวมทั้งหมด หมวดหมู่ที่จ่ายสูงสุด และจำนวนรายการ
-* **สรุปแบบประโยคไดอารี่:** คำนวณค่าใช้จ่ายเฉลี่ยต่อวัน หมวดที่จ่ายบ่อยที่สุด และวันที่ใช้เงินเยอะที่สุดให้อัตโนมัติ
-* **กราฟโดนัท (Donut Chart):** แสดงสัดส่วนเปอร์เซ็นต์ค่าใช้จ่ายแยกตามหมวดหมู่
-
-### 3. 🌸 สวนดอกไม้ & กราฟแท่ง 7 วัน (7-Day Expense Tracker)
-ติดตามพฤติกรรมการใช้จ่ายย้อนหลัง 7 วันล่าสุด โดยสามารถสลับดูได้ **2 มุมมอง**:
-* **มุมมองสวนดอกไม้:** กระถางดอกไม้และสีพื้นหลังจะเปลี่ยนไปตามระดับการใช้จ่ายในแต่ละวัน
-  * 🟢 **สีเขียว (0 - 150 ฿):** ดอกไม้บานสะพรั่ง (ประหยัดมาก)
-  * 🟡 **สีเหลือง (151 - 500 ฿):** ดอกตูมกำลังโต (จ่ายปานกลาง)
-  * 🔴 **สีชมพู (> 500 ฿):** ดอกไม้คอตก (จ่ายเยอะมาก)
-* **มุมมองกราฟแท่ง (Bar Chart):** เปรียบเทียบความสูงของยอดใช้จ่ายแต่ละวันอย่างชัดเจน พร้อมสีแท่งกราฟที่ซิงก์ตามระดับความประหยัด
-
-### 4. 📖 ไดอารี่การจ่ายเงิน (Transaction History)
-* **ค้นหา (Search):** ค้นหาจากชื่อรายการได้ทันทีแบบ Real-time
-* **กรองหมวดหมู่ (Category Filter):** เลือกดูเฉพาะหมวดหมู่ที่ต้องการ
-* **เรียงลำดับ (Sort):** เรียงตามวันที่ (ล่าสุด/เก่าสุด) หรือเรียงตามราคา (มากไปน้อย/น้อยไปมาก)
-* **บันทึกข้อมูลอัตโนมัติ (LocalStorage):** ข้อมูลถูกเก็บไว้ในเบราว์เซอร์ของผู้ใช้ ไม่หายเมื่อรีเฟรชหน้าเว็บ พร้อมปุ่มรีเซ็ตข้อมูลตัวอย่างสำหรับทดสอบ
-
----
-
-## 🛠️ เทคโนโลยีที่ใช้ (Tech Stack)
-
-* **HTML5 & Vanilla JavaScript (ES6+):** จัดการตรรกะ การคำนวณสถิติ และการวาดกราฟ SVG แบบ Dynamic โดยไม่พึ่งพาไลบรารีขนาดใหญ่
-* **Tailwind CSS (CDN):** จัดวาง Layout แบบ Responsive รองรับทั้งหน้าจอมือถือและคอมพิวเตอร์
-* **Custom Vector Graphics (SVG):** วาดตัวละครน้องสัตว์ ดอกไม้ ไอคอน และกราฟทั้งหมดด้วยโค้ด SVG เพื่อให้คมชัดทุกขนาดหน้าจอ
-* **Google Fonts:** ฟอนต์ `Mali` และ `Kanit`
-* **Web Storage API (`localStorage`):** จัดเก็บข้อมูลรายการค่าใช้จ่ายบนเครื่องผู้ใช้
+- **HTML5 & Vanilla JavaScript (ES6+)**
+- **Tailwind CSS** (via CDN)
+- **Custom Inline SVG Illustrations** (Zero external icon dependencies)
+- **Google Fonts:** *Mali* & *Kanit*
+- **Web Storage API (`localStorage`)**
